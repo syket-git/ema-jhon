@@ -1,3 +1,10 @@
 .center{
     text-align:center;
 }
+.cart{
+    position: fixed;
+    background-color: #efefef;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px lightgray;
+}

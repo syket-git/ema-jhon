@@ -55,7 +55,7 @@ const Auth = () => {
             return res.user
         })
         .catch(err => {
-            console.log(err);
+           
             return err.message;
         }) 
         

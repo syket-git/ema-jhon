@@ -16,7 +16,7 @@ const Login = () => {
             window.location.pathname = '/'
         })
     }
-   // console.log(auth);
+   
     return (
         <div>
             

@@ -25,7 +25,7 @@ const Order = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productKey = Object.keys(savedCart);
-        fetch('http://localhost:4200/getProductKey',{
+        fetch('https://protected-depths-05659.herokuapp.com/getProductKey',{
             method:'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -61,7 +61,9 @@ const Order = () => {
             </div>
             <div className="cart-container"> 
                 <Cart cart={cart}>
-                    <Link to="/shipment">
+                    {
+                        cart.length > 0 ? 
+                        <Link to="/shipment">
                         { auth.user ?  
                             <button className="button">Proceed to Shipment</button>
                             :
@@ -69,6 +71,17 @@ const Order = () => {
 
                         }
                     </Link>
+                    : 
+
+                    <Link to="/shipment">
+                        { auth.user ?  
+                            <button disabled className="button">Proceed to Shipment</button>
+                            :
+                            <button className="button">Login to Proceed</button>
+
+                        }
+                    </Link>
+                    }
                 </Cart>
             </div>
             
